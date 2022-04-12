@@ -4,13 +4,14 @@
 #
 Name     : pypi-markdown2
 Version  : 2.4.2
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/0a/81/35c38266bc53f8031fb3fd4c71ed4a69bb77cf8f00c3de0728e79fee76a9/markdown2-2.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/0a/81/35c38266bc53f8031fb3fd4c71ed4a69bb77cf8f00c3de0728e79fee76a9/markdown2-2.4.2.tar.gz
 Summary  : A fast and complete Python implementation of Markdown
 Group    : Development/Tools
 License  : MIT
 Requires: pypi-markdown2-bin = %{version}-%{release}
+Requires: pypi-markdown2-license = %{version}-%{release}
 Requires: pypi-markdown2-python = %{version}-%{release}
 Requires: pypi-markdown2-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -24,9 +25,18 @@ Markdown is a text-to-HTML filter; it translates an easy-to-read /
 %package bin
 Summary: bin components for the pypi-markdown2 package.
 Group: Binaries
+Requires: pypi-markdown2-license = %{version}-%{release}
 
 %description bin
 bin components for the pypi-markdown2 package.
+
+
+%package license
+Summary: license components for the pypi-markdown2 package.
+Group: Default
+
+%description license
+license components for the pypi-markdown2 package.
 
 
 %package python
@@ -57,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1642461121
+export SOURCE_DATE_EPOCH=1649784272
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -72,6 +82,8 @@ python3 setup.py build
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-markdown2
+cp %{_builddir}/markdown2-2.4.2/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-markdown2/2e9aec16de154cd9fbdc11f4d1b3bbd25f104c1a
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -83,6 +95,10 @@ echo ----[ mark ]----
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/markdown2
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-markdown2/2e9aec16de154cd9fbdc11f4d1b3bbd25f104c1a
 
 %files python
 %defattr(-,root,root,-)
