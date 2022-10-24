@@ -4,7 +4,7 @@
 #
 Name     : pypi-markdown2
 Version  : 2.4.6
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/83/b7/24613765f558afde9f47b61fcd787a9856ac1515b53af38bd11bf2fb3c8c/markdown2-2.4.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/83/b7/24613765f558afde9f47b61fcd787a9856ac1515b53af38bd11bf2fb3c8c/markdown2-2.4.6.tar.gz
 Summary  : A fast and complete Python implementation of Markdown
