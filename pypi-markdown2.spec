@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : pypi-markdown2
-Version  : 2.4.11
-Release  : 22
-URL      : https://files.pythonhosted.org/packages/a7/b7/0ba8568968673ba5bcd221525ec364820b46dea9da441146d72cae4df18a/markdown2-2.4.11.tar.gz
-Source0  : https://files.pythonhosted.org/packages/a7/b7/0ba8568968673ba5bcd221525ec364820b46dea9da441146d72cae4df18a/markdown2-2.4.11.tar.gz
+Version  : 2.4.12
+Release  : 23
+URL      : https://files.pythonhosted.org/packages/3c/e4/87a454674ac303e2ca6c25713845d2ae1b59c1a88576054cbec25aaebad1/markdown2-2.4.12.tar.gz
+Source0  : https://files.pythonhosted.org/packages/3c/e4/87a454674ac303e2ca6c25713845d2ae1b59c1a88576054cbec25aaebad1/markdown2-2.4.12.tar.gz
 Summary  : A fast and complete Python implementation of Markdown
 Group    : Development/Tools
 License  : MIT
@@ -65,10 +65,10 @@ python3 components for the pypi-markdown2 package.
 
 
 %prep
-%setup -q -n markdown2-2.4.11
-cd %{_builddir}/markdown2-2.4.11
+%setup -q -n markdown2-2.4.12
+cd %{_builddir}/markdown2-2.4.12
 pushd ..
-cp -a markdown2-2.4.11 buildavx2
+cp -a markdown2-2.4.12 buildavx2
 popd
 
 %build
@@ -76,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702068990
+export SOURCE_DATE_EPOCH=1702928420
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
