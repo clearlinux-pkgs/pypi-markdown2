@@ -1,5 +1,5 @@
 PKG_NAME := pypi-markdown2
-URL = https://files.pythonhosted.org/packages/74/89/a6bb59171d0bd5a3b19deb834ec29378a7c8e05bcb0a4dd4e5cb418ea03b/markdown2-2.4.13.tar.gz
+URL = https://files.pythonhosted.org/packages/da/00/3c708de5bffa0494daf894d2e8e2b6165f866ef3ae7939546fae039b5f0e/markdown2-2.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
